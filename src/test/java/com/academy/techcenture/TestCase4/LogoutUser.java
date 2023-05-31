@@ -5,7 +5,6 @@ import com.academy.techcenture.pages.HomePage;
 import com.academy.techcenture.pages.LoginPage;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
-
 import java.util.Map;
 
 public class LogoutUser extends BaseTest {
