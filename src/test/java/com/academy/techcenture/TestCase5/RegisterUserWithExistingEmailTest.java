@@ -3,7 +3,6 @@ package com.academy.techcenture.TestCase5;
 import com.academy.techcenture.baseTest.BaseTest;
 import com.academy.techcenture.pages.HomePage;
 import com.academy.techcenture.pages.LoginPage;
-import com.academy.techcenture.pages.SignUpPage;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 

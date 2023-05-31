@@ -40,6 +40,13 @@ public class LoginPage {
     protected WebElement errorMessage;
 
 
+    @FindBy(xpath = "//div[@class='signup-form']//input[2]")
+    public WebElement nameInputBox;
+    @FindBy(xpath = "//div[@class='signup-form']//input[3]")
+    public WebElement emailInputBox;
+
+
+
     public void verifyLoginToYourAccountHeader(){
         Assert.assertTrue(loginToYourAccountHeader.isDisplayed());
     }

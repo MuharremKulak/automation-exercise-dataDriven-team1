@@ -17,7 +17,12 @@ public class HomePage {
     }
 
     @FindBy(xpath = "//a[@href='/login']")
-    protected WebElement signUpLoginButton;
+    public WebElement signUpLoginButton;
+    @FindBy(xpath = "//a[@href='/delete_account']")
+    public WebElement deleteAccountButton;
+    @FindBy(xpath = "//div[@class='shop-menu pull-right']//li[10]/a")
+    public WebElement loggedInAsUsername;
+
 
 
     public void navigateToHomePage(){
