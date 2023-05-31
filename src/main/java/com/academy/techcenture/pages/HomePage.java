@@ -19,6 +19,9 @@ public class HomePage {
     @FindBy(xpath = "//a[@href='/login']")
     protected WebElement signUpLoginButton;
 
+    @FindBy(xpath = "//a[@href='/contact_us']")
+    protected WebElement contactUsButton;
+
 
     public void navigateToHomePage(){
         driver.get(ConfigReader.getProperty("url"));
@@ -32,6 +35,10 @@ public class HomePage {
 
     public void clickOnSignUpLoginButton(){
         signUpLoginButton.click();
+    }
+
+    public void clickOnContactUsButton(){
+        contactUsButton.click();
     }
 
 
