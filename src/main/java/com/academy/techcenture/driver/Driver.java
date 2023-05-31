@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +29,9 @@ public class Driver {
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
                     options.setHeadless(headless);
-                    Map<String, Object> prefs = new HashMap<String, Object>();
+                    options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
+
+                    Map<String, Object> prefs = new HashMap<>();
                     prefs.put("autofill.profile_enabled", false);
                     prefs.put("profile.password_manager_enabled", false);
                     prefs.put("profile.default_content_setting_values.notifications", 2);

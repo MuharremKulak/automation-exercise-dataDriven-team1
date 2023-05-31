@@ -18,12 +18,12 @@ public class TestCasesPage {
     @FindBy(xpath = "//h2[@class='title text-center']/b")
     protected WebElement testCasesHeader;
 
-
     public void verifyTestCasesPage(){
         String actualHeader = testCasesHeader.getText();
         String expectedHeader = "TEST CASES";
         Assert.assertEquals(actualHeader,expectedHeader);
     }
+
 
 
 }

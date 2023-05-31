@@ -40,10 +40,10 @@ public class ContactUsFormTest extends BaseTest {
         extentTest.log(LogStatus.INFO, "Entered subject successfully");
         contactUsPage.enterMessageForContactPage();
         extentTest.log(LogStatus.INFO, "Entered Message successfully");
+        contactUsPage.uploadFileForContactPage();
+        extentTest.log(LogStatus.INFO, "Uploaded file successfully");
         contactUsPage.clickOnSubmitButtonForContactPage();
         extentTest.log(LogStatus.INFO, "Clicked Submit Button");
-//        contactUsPage.uploadFileForContactPage();
-//        extentTest.log(LogStatus.INFO, "Uploaded file successfully");
         contactUsPage.clickOkButton();
         extentTest.log(LogStatus.INFO, "Clicked Ok Button");
         contactUsPage.verifySuccessMessage();

@@ -17,21 +17,17 @@ public class SubscriptionPage {
 
     @FindBy(xpath="//li/a/i[@class='fa fa-home']")
     public WebElement HomePageVisible;
-
     @FindBy(xpath ="//div[@class='single-widget']//h2 ")
     public WebElement SubsHomePage;
-
     @FindBy(xpath = "//form/input[2][contains(@type,'email')]")
     public WebElement EnterSubsEmail;
-
     @FindBy(xpath="//form/button[@id='subscribe']")
     public WebElement SubsButton;
-
     @FindBy(xpath = "//div[contains(text(),'You have been successfully subscribed!')]")
     public WebElement SuccessSubsText;
 
 
-public void verifyHomePageVisible(){
+    public void verifyHomePageVisible(){
     HomePageVisible.click();
     Assert.assertTrue(HomePageVisible.isDisplayed());
 
