@@ -16,7 +16,7 @@ public class ContactUsFormTest extends BaseTest {
     @Test(dataProvider = "CustomerAccountInformation")
     public void ContactUsPageTest(Map<String, String> data) throws InterruptedException {
 
-        extentTest = extentReports.startTest("RegisterUserWithExistingEmailTest");
+        extentTest = extentReports.startTest("ContactUsFormTest");
 
         homePage = new HomePage(driver);
         extentTest.log(LogStatus.INFO, "Instantiated new Home page");
