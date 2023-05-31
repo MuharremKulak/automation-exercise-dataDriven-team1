@@ -94,7 +94,7 @@ public class BaseTest {
 
     @DataProvider(name = "CustomerAccountInformation")
     public Object[][] getCreateCustomerData(){
-        return new ExcelReader("src/main/resources/Luma_Data_Team1.xlsx","CreateNewCustomerAccount").getData();
+        return new ExcelReader("src/main/resources/automation-exercise-data.xlsx","CustomerAccountInformation").getData();
     }
 
 
