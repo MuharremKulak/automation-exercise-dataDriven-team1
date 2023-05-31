@@ -28,6 +28,16 @@ public class LoginPage {
     protected WebElement logOutButton;
     @FindBy(xpath = "//ul[@class='nav navbar-nav']/li[10]/a")
     protected WebElement loggedInAsUsername;
+    @FindBy(xpath = "//div[@class='signup-form']/h2")
+    protected WebElement newUserSignUpHeader;
+    @FindBy(xpath = "//input[@data-qa='signup-name']")
+    protected WebElement nameInputForSignUp;
+    @FindBy(xpath = "//input[@data-qa='signup-email']")
+    protected WebElement emailInputForSignUp;
+    @FindBy(xpath = "//button[@data-qa='signup-button']")
+    protected WebElement signUpButton;
+    @FindBy(xpath = "//form[@action='/signup']/p")
+    protected WebElement errorMessage;
 
 
     public void verifyLoginToYourAccountHeader(){
@@ -57,6 +67,28 @@ public class LoginPage {
     public void verifyNavigatedToLoginPage(){
         Assert.assertTrue(loginToYourAccountHeader.isDisplayed());
     }
+
+    public void verifyNewUserSignUpHeader(){
+        Assert.assertTrue(newUserSignUpHeader.isDisplayed());
+    }
+
+    public void enterNameForSignUp(Map<String,String> data){
+        nameInputForSignUp.sendKeys(data.get("FirstName"));
+    }
+
+    public void enterEmailForSignUp(Map<String,String> data){
+        emailInputForSignUp.sendKeys(data.get("Email"));
+    }
+
+    public void clickOnSignUpButton() throws InterruptedException {
+        signUpButton.click();
+        Thread.sleep(2000);
+    }
+
+    public void verifyErrorMessage(){
+        Assert.assertTrue(errorMessage.isDisplayed());
+    }
+
 
 
 
