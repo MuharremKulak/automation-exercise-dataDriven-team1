@@ -53,7 +53,7 @@ public class BaseTest {
         browserName = browserCap.getBrowserName();
         browserVersion = browserCap.getBrowserVersion();
         Thread.sleep(2000);
-//        extentReports = new ExtentReports(  System.getProperty("user.dir") + "/test-output/ExtentReports.html", true);
+        extentReports = new ExtentReports(  System.getProperty("user.dir") + "/test-output/ExtentReports.html", true);
         extentReports = getInstance();
         extentReports.addSystemInfo("BROWSER NAME", browserName);
         extentReports.addSystemInfo("BROWSER VERSION", browserVersion);

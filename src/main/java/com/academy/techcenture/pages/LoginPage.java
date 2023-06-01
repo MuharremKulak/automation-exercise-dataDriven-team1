@@ -30,20 +30,20 @@ public class LoginPage {
     protected WebElement loggedInAsUsername;
     @FindBy(xpath = "//div[@class='signup-form']/h2")
     protected WebElement newUserSignUpHeader;
-    @FindBy(xpath = "//input[@data-qa='signup-name']")
-    protected WebElement nameInputForSignUp;
-    @FindBy(xpath = "//input[@data-qa='signup-email']")
-    protected WebElement emailInputForSignUp;
+//    @FindBy(xpath = "//input[@data-qa='signup-name']")
+//    protected WebElement nameInputForSignUp;
+//    @FindBy(xpath = "//input[@data-qa='signup-email']")
+//    protected WebElement emailInputForSignUp;
     @FindBy(xpath = "//button[@data-qa='signup-button']")
     protected WebElement signUpButton;
     @FindBy(xpath = "//form[@action='/signup']/p")
     protected WebElement errorMessage;
 
 
-    @FindBy(xpath = "//div[@class='signup-form']//input[2]")
-    public WebElement nameInputBox;
-    @FindBy(xpath = "//div[@class='signup-form']//input[3]")
-    public WebElement emailInputBox;
+    @FindBy(xpath = "//input[@data-qa='signup-name']")
+    public WebElement nameInputForSignUp;
+    @FindBy(xpath = "//input[@data-qa='signup-email']")
+    public WebElement emailInputForSignUp;
 
 
 
@@ -78,6 +78,7 @@ public class LoginPage {
     public void verifyNewUserSignUpHeader(){
         Assert.assertTrue(newUserSignUpHeader.isDisplayed());
     }
+
 
     public void enterNameForSignUp(Map<String,String> data){
         nameInputForSignUp.sendKeys(data.get("FirstName"));

@@ -22,14 +22,12 @@ public class HomePage {
     public WebElement deleteAccountButton;
     @FindBy(xpath = "//div[@class='shop-menu pull-right']//li[10]/a")
     public WebElement loggedInAsUsername;
-
-
     @FindBy(xpath = "//a[@href='/contact_us']")
     protected WebElement contactUsButton;
-
     @FindBy(xpath = "//a[@href='/test_cases']/i")
     protected WebElement testCasesButton;
-
+    @FindBy(xpath = "//a[@href='/products']")
+    protected WebElement productsButton;
 
     public void navigateToHomePage(){
         driver.get(ConfigReader.getProperty("url"));
@@ -53,6 +51,9 @@ public class HomePage {
         testCasesButton.click();
     }
 
+    public void clickProductsButton(){
+        productsButton.click();
+    }
 
 
 

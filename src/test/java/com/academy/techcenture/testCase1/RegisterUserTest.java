@@ -18,66 +18,44 @@ public class RegisterUserTest extends BaseTest {
 
 
     @Test(dataProvider = "CustomerAccountInformation")
-
     public void registerUser(Map<String, String> data) throws InterruptedException {
+        extentTest = extentReports.startTest("registerUserTest");
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
         enterAccountInformationPage = new EnterAccountInformationPage();
         accountCreatedPage = new AccountCreatedPage();
-        accountDeletedPage = accountDeletedPage;
-
+        accountDeletedPage = new AccountDeletedPage();
         homePage.verifyHomePageTitle();
         extentTest.log(LogStatus.PASS, "Homepage verified");
         homePage.clickOnSignUpLoginButton();
         extentTest.log(LogStatus.PASS, "Clicked sign up button");
         loginPage.verifyNewUserSignUpHeader();
         extentTest.log(LogStatus.PASS, "Header is displayed");
-        loginPage.nameInputBox.sendKeys(data.get("FirstName"));
-        loginPage.emailInputBox.sendKeys(data.get("Email"));
+        loginPage.enterNameForSignUp(data);
+        loginPage.enterEmailForSignUp(data);
         extentTest.log(LogStatus.PASS, "Name and email entered");
         loginPage.clickOnSignUpButton();
         extentTest.log(LogStatus.PASS, "Clicked signup button");
-        Assert.assertTrue(enterAccountInformationPage.enterAccountInformationHeader.isDisplayed());
+//        enterAccountInformationPage.verifyEnterAccountInfoHeader();
         extentTest.log(LogStatus.PASS, "Account information Header is displayed");
-        if (data.get("Gender").equals("M")) {
-            enterAccountInformationPage.radioButtonMR.click();
-        } else {
-            enterAccountInformationPage.radioButtonMRS.click();
-        }
-        enterAccountInformationPage.passwordInput.sendKeys(data.get("Password"));
-        Select select = new Select(enterAccountInformationPage.monthsDropDown);// Ask team best approach for birthday drop down
-        select.selectByVisibleText(data.get("DateOfBirth"));
-
-
-//        extentTest.log(LogStatus.PASS, "Account details Successfully filled in "); ???
-        enterAccountInformationPage.newsLetterCheckBox.click();
-        extentTest.log(LogStatus.PASS, "Clicked newsletter button");
-        enterAccountInformationPage.specialOffersCheckBox.click();
-        extentTest.log(LogStatus.PASS, "Clicked special offers button");
-        enterAccountInformationPage.firstNameInfo.sendKeys(data.get("FirstName"));
-        enterAccountInformationPage.lastNameInfo.sendKeys(data.get("LastName"));
-        enterAccountInformationPage.companyInfo.sendKeys(data.get("Company"));
-        enterAccountInformationPage.addressInfo.sendKeys(data.get("StreetAddress"));
-        select = new Select(enterAccountInformationPage.countryDropDown);
-        select.selectByVisibleText(data.get("Country"));
-        enterAccountInformationPage.stateInfo.sendKeys(data.get("State"));
-        enterAccountInformationPage.cityInfo.sendKeys(data.get("City"));
-        enterAccountInformationPage.zipCodeInfo.sendKeys(data.get("Zip"));
-        enterAccountInformationPage.mobileNumber.sendKeys(data.get("PhoneNumber"));
-//        extentTest.log(LogStatus.PASS, "Address information details entered");  ??
-        enterAccountInformationPage.createAccountButton.click();
-        Assert.assertTrue(accountCreatedPage.accountCreatedConfirmHeader.isDisplayed());
+        enterAccountInformationPage.mrOrMrsRadioButton(data);
+        enterAccountInformationPage.fillAccountDetails(data);
+        extentTest.log(LogStatus.PASS, "Account details Successfully filled in ");
+        enterAccountInformationPage.selectNewsletterOffers();
+        extentTest.log(LogStatus.PASS, "Clicked special offers and newsletter button");
+        enterAccountInformationPage.fillAddressDetails(data);
+        extentTest.log(LogStatus.PASS, "Address information details entered");
+        enterAccountInformationPage.clickCreateAccountButton();
+        accountCreatedPage.accountCreatedConfirmHeader();
         extentTest.log(LogStatus.PASS, "Header verified");
-        accountCreatedPage.continueButton.click();
+        accountCreatedPage.clickContinueButton();
         extentTest.log(LogStatus.PASS, "Continue button clicked");
-        Assert.assertTrue(homePage.loggedInAsUsername.isDisplayed());
+        homePage.loggedInAsUsername();
         extentTest.log(LogStatus.PASS, "Logged in as <username> is displayed");
-        homePage.deleteAccountButton.click();
+        homePage.deleteAccountButton();
         extentTest.log(LogStatus.PASS, "Delete account number clicked");
-        Assert.assertTrue(accountDeletedPage.accountDeletedHeader.isDisplayed());
-        accountDeletedPage.continueButton.click();
-
-
+        accountDeletedPage.accountDeletedHeader();
+        accountDeletedPage.clickContinueButton();
 
 
     }
