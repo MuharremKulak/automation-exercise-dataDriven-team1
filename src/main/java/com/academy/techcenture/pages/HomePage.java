@@ -53,6 +53,12 @@ public class HomePage {
         testCasesButton.click();
     }
 
+    public void loggedInAsUsername(){
+        Assert.assertTrue(loggedInAsUsername.isDisplayed());
+    }
+    public void deleteAccountButton(){
+        deleteAccountButton.click();
+    }
 
 
 
