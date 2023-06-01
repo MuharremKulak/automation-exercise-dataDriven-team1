@@ -3,6 +3,8 @@ package com.academy.techcenture.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Map;
+
 public class EnterAccountInformationPage {
     @FindBy (xpath = "//div[@class='login-form']/h2/b")
     public WebElement enterAccountInformationHeader;
@@ -46,4 +48,9 @@ public class EnterAccountInformationPage {
     public WebElement mobileNumber;
     @FindBy (xpath = "//button[@data-qa='create-account']")
     public WebElement createAccountButton;
+
+
+    public void enterCustomerName(Map<String,String> data){
+        nameInput.sendKeys(data.get("FirstName"));
+    }
 }

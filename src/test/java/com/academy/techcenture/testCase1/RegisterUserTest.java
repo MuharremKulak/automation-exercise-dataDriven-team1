@@ -18,7 +18,6 @@ public class RegisterUserTest extends BaseTest {
 
 
     @Test(dataProvider = "CustomerAccountInformation")
-
     public void registerUser(Map<String, String> data) throws InterruptedException {
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
