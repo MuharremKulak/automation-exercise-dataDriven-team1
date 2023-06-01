@@ -60,11 +60,12 @@ public class ContactUsPage {
         Thread.sleep(6000);
     }
 
-//    public void uploadFileForContactPage() throws InterruptedException {
-//        String filePath = "/Users/muharremkulak/Test";
-//        fileInput.sendKeys(filePath);
-//        Thread.sleep(3000);
-//    }
+    public void uploadFileForContactPage() throws InterruptedException {
+        //Todo have some kind of file under this project
+        String filePath = System.getProperty("user.dir") + "/src/main/resources/Test.png";
+        fileInput.sendKeys(filePath);
+        Thread.sleep(3000);
+    }
 
     public void clickOnSubmitButtonForContactPage() throws InterruptedException {
         submitButton.click();
@@ -79,7 +80,6 @@ public class ContactUsPage {
     public void verifySuccessMessage(){
         Assert.assertTrue(successMessageForContactPage.isDisplayed());
     }
-
 
     public void clickHomeButtonToNavigateHomePage(){
         homeButtonToNavigateBack.click();
