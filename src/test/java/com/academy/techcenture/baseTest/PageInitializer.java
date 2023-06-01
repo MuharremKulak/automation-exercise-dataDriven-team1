@@ -16,7 +16,7 @@ public class PageInitializer extends BaseTest{
         enterAccountInformationPage = new EnterAccountInformationPage();
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
-        subscriptionPage = new SubscriptionPage();
+        subscriptionPage = new SubscriptionPage(driver);
     }
 
 }

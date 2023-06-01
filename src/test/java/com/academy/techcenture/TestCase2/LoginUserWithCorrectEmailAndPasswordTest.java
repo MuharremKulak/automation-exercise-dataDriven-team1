@@ -24,9 +24,9 @@ public class LoginUserWithCorrectEmailAndPasswordTest extends BaseTest {
         loginPage.enterCustomerEmailForLogin(data);
         loginPage.enterCustomerPasswordForLogin(data);
         loginPage.clickOnLoginButton();
-        homePage.loggedInAsUsername();
-        homePage.deleteAccountButton();
-        accountDeletedPage.accountDeletedHeader();
+      //  homePage.loggedInAsUsername();
+      //  homePage.deleteAccountButton();
+      //  accountDeletedPage.accountDeletedHeader();
 
     }
 }

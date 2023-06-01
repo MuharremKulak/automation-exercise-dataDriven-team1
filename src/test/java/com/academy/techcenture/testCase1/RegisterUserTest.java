@@ -38,7 +38,7 @@ public class RegisterUserTest extends BaseTest {
         extentTest.log(LogStatus.PASS, "Clicked signup button");
 //        enterAccountInformationPage.verifyEnterAccountInfoHeader();
         extentTest.log(LogStatus.PASS, "Account information Header is displayed");
-        enterAccountInformationPage.mrOrMrsRadioButton(data);
+        enterAccountInformationPage.radioButtonMR(data);
         enterAccountInformationPage.fillAccountDetails(data);
         extentTest.log(LogStatus.PASS, "Account details Successfully filled in ");
         enterAccountInformationPage.selectNewsletterOffers();
