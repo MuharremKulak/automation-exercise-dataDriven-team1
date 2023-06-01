@@ -24,11 +24,17 @@ public class SearchProduct extends BaseTest {
         homePage.verifyHomePageTitle();
         extentTest.log(LogStatus.PASS, "Verified Home Page Title");
         homePage.clickProductsButton();
+        extentTest.log(LogStatus.PASS, "Clicked product button");
         allProductPage = new AllProductPage(driver);
+        extentTest.log(LogStatus.INFO, "Instantiated new All Product page");
         allProductPage.verifyAllProductPageHeader();
+        extentTest.log(LogStatus.PASS, "Verified All product Page Header");
         allProductPage.searchProductAndClickSearchButton();
+        extentTest.log(LogStatus.PASS, "Searched and Clicked product");
         allProductPage.verifySearchedProductIsVisible();
+        extentTest.log(LogStatus.PASS, "Verified search product header is visible");
         allProductPage.verifyProductsAfterSearched();
+        extentTest.log(LogStatus.PASS, "Verified product after searched");
     }
 
 
