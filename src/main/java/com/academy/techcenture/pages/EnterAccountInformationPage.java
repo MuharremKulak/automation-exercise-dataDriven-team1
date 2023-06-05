@@ -18,17 +18,12 @@ public class EnterAccountInformationPage {
         PageFactory.initElements(this.driver, this);
     }
 
-
     @FindBy (xpath = "//div[@class='login-form']/h2/b")
     public WebElement enterAccountInformationHeader;
     @FindBy (id = "id_gender1")
     public WebElement radioButtonMR;
     @FindBy (id = "uniform-id_gender2")
     public WebElement radioButtonMRS;
-    @FindBy (id = "name")
-    public WebElement nameInput;
-    @FindBy (id = "email")
-    public WebElement emailInput;
     @FindBy (id = "password")
     public WebElement passwordInput;
     @FindBy (id = "days")
@@ -63,16 +58,13 @@ public class EnterAccountInformationPage {
     public WebElement createAccountButton;
 
 
-    public void enterCustomerName(Map<String,String> data){
-        nameInput.sendKeys(data.get("FirstName"));
-    }
 
     public void verifyEnterAccountInfoHeader(){
         System.out.println(enterAccountInformationHeader.getText());
         Assert.assertTrue(enterAccountInformationHeader.isDisplayed());
     }
-    public void mrOrMrsRadioButton(Map<String,String> data){
 
+    public void mrOrMrsRadioButton(Map<String,String> data){
         if (data.get("Gender").equals("M")) {
             radioButtonMR.click();
         } else {
@@ -110,6 +102,7 @@ public class EnterAccountInformationPage {
         zipCodeInfo.sendKeys(data.get("Zip"));
         mobileNumber.sendKeys(data.get("PhoneNumber"));
     }
+
     public void clickCreateAccountButton(){
         createAccountButton.click();
     }

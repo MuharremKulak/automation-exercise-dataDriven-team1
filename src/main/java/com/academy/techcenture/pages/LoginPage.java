@@ -1,5 +1,7 @@
 package com.academy.techcenture.pages;
 
+import com.academy.techcenture.utils.CommonUtils;
+import com.academy.techcenture.utils.ConfigReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,11 +41,12 @@ public class LoginPage {
     @FindBy(xpath = "//form[@action='/signup']/p")
     protected WebElement errorMessage;
 
-
-    @FindBy(xpath = "//input[@data-qa='signup-name']")
-    public WebElement nameInputForSignUp;
-    @FindBy(xpath = "//input[@data-qa='signup-email']")
-    public WebElement emailInputForSignUp;
+    @FindBy(xpath = "//div[@class='signup-form']//input[2]")
+    public WebElement nameInputBox;
+    @FindBy(xpath = "//div[@class='signup-form']//input[3]")
+    public WebElement emailInputBox;
+    @FindBy(xpath = "//a[@href='/delete_account']")
+    protected WebElement deleteAccountButton;
 
 
 
@@ -81,23 +84,29 @@ public class LoginPage {
 
 
     public void enterNameForSignUp(Map<String,String> data){
-        nameInputForSignUp.sendKeys(data.get("FirstName"));
+        nameInputBox.sendKeys(data.get("FirstName"));
     }
 
     public void enterEmailForSignUp(Map<String,String> data){
-        emailInputForSignUp.sendKeys(data.get("Email"));
+        emailInputBox.sendKeys(data.get("Email"));
     }
 
     public void clickOnSignUpButton() throws InterruptedException {
         signUpButton.click();
         Thread.sleep(2000);
     }
-
     public void verifyErrorMessage(){
         Assert.assertTrue(errorMessage.isDisplayed());
     }
 
+    public void fillAllDetailsInSignUp(Map<String, String> data) {
+        nameInputBox.sendKeys(data.get("FirstName"));
+        emailInputBox.sendKeys(CommonUtils.generateRandomEmail());
+        signUpButton.click();
+    }
 
-
+    public void clickOnDeleteAccountButton(){
+        deleteAccountButton.click();
+    }
 
 }

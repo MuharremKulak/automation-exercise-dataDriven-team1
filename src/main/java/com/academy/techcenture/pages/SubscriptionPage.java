@@ -1,20 +1,23 @@
 package com.academy.techcenture.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class SubscriptionPage {
-    private WebDriver driver;
+import java.util.Map;
 
+public class SubscriptionPage {
+
+    private WebDriver driver;
 
     public SubscriptionPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
     }
-
 
     @FindBy(xpath="//li/a/i[@class='fa fa-home']")
     public WebElement HomePageVisible;
@@ -31,24 +34,18 @@ public class SubscriptionPage {
     public void verifyHomePageVisible(){
     HomePageVisible.click();
     Assert.assertTrue(HomePageVisible.isDisplayed());
-
-}
+    }
     public void verifySubscriptionHomePage(){
         Assert.assertTrue(SubsHomePage.isDisplayed());
     }
-
-    public void enterEmailForSubs(){
-    EnterSubsEmail.sendKeys("lee@gmail.com");
+    public void enterEmailForSubs(Map<String,String> data){
+        EnterSubsEmail.sendKeys(data.get("Email"));
     }
-
     public void clickSubsButton(){
     SubsButton.click();
     }
-
     public void verifySubsMessage(){
         Assert.assertTrue(SuccessSubsText.isDisplayed());
-
-
     }
-
 }
+

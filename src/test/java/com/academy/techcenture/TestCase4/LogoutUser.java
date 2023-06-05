@@ -19,6 +19,7 @@ public class LogoutUser extends BaseTest {
 
         homePage = new HomePage(driver);
         extentTest.log(LogStatus.INFO, "Instantiated new Home page");
+
         homePage.navigateToHomePage();
         extentTest.log(LogStatus.INFO, "Navigated Home Page Object");
         homePage.verifyHomePageTitle();

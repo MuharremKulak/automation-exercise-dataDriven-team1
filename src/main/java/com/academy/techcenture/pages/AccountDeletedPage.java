@@ -20,9 +20,15 @@ public class AccountDeletedPage {
     @FindBy (xpath = "//a[@data-qa='continue-button']")
     public WebElement continueButton;
 
+
     public void accountDeletedHeader(){
         Assert.assertTrue(accountDeletedHeader.isDisplayed());
     }
+
+    public void verifyAccountDeletedHeader(){
+        Assert.assertTrue(accountDeletedHeader.isDisplayed());
+    }
+
     public void clickContinueButton(){
         continueButton.click();
     }

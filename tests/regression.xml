@@ -4,11 +4,32 @@
     <test name="REGRESSION TESTS">
 
         <classes>
+            <class name="com.academy.techcenture.testCase1.RegisterUserTest"/>
+            <class name="com.academy.techcenture.TestCase2.LoginUserWithCorrectEmailAndPasswordTest"/>
+            <class name="com.academy.techcenture.TestCase3.LoginTestWithIncorrectCredentials"/>
             <class name="com.academy.techcenture.TestCase4.LogoutUser"/>
-            <class name="com.academy.techcenture.TestCase11.VerifySubscriptionInCartPage"/>
+            <class name="com.academy.techcenture.TestCase5.RegisterUserWithExistingEmailTest"/>
+            <class name="com.academy.techcenture.TestCase6.ContactUsFormTest"/>
+            <class name="com.academy.techcenture.TestCase7.VerifyTestCasesPageTest"/>
+            <class name="com.academy.techcenture.TestCase8.VerifyAllProductsAndProductDetailPageTest"/>
+            <class name="com.academy.techcenture.TestCase9.SearchProduct"/>
+            <class name="com.academy.techcenture.TestCase10.VerifySubscriptionInHomePageTest"/>
+            <class name="com.academy.techcenture.TestCase11.VerifySubscriptionInCartPageTest"/>
+            <class name="com.academy.techcenture.TestCase12.AddProductsInCartTest"/>
             <class name="com.academy.techcenture.TestCase13.VerifyProductQuantityInCart"/>
+            <class name="com.academy.techcenture.TestCase14.PlaceOrderRegisterWhileCheckout"/>
+            <class name="com.academy.techcenture.TestCase15.PlaceOrderRegisterBeforeCheckout"/>
+            <class name="com.academy.techcenture.TestCase16.PlaceAnOrderLoginBeforeCheckoutTest"/>
+            <class name="com.academy.techcenture.TestCase17.RemoveProductsFromCart"/>
+            <class name="com.academy.techcenture.TestCase18.ViewCategoryProductsTest"/>
+            <class name="com.academy.techcenture.TestCase19.ViewAndCartBrandProductsTest"/>
+            <class name="com.academy.techcenture.TestCase20.SearchProductsAndVerifyCartAfterLoginTest"/>
             <class name="com.academy.techcenture.TestCase21.AddReviewOnProduct"/>
+            <class name="com.academy.techcenture.TestCase22.AddToCartFromRecommendedItemsTest"/>
+            <class name="com.academy.techcenture.TestCase23.VerifyAddressDetailsInCheckoutPageTest"/>
             <class name="com.academy.techcenture.TestCase24.DownloadInvoiceAfterPurchaseOrder"/>
+            <class name="com.academy.techcenture.TestCase25.VerifyScrollUpUsingArrowButtonAndScrollDownFunctionality"/>
+            <class name="com.academy.techcenture.TestCase26.VerifyScrollDownAndScrollUpFunctionalityTest"/>
         </classes>
 
     </test>

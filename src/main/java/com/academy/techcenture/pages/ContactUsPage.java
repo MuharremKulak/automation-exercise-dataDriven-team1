@@ -37,6 +37,7 @@ public class ContactUsPage {
     @FindBy(xpath = "//a[@class='btn btn-success']")
     protected WebElement homeButtonToNavigateBack;
 
+
     public void verifyGetInTouchHeader(){
         Assert.assertTrue(getInTouchHeader.isDisplayed());
     }
