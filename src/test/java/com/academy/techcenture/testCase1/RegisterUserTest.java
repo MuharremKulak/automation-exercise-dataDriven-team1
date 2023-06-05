@@ -3,8 +3,6 @@ package com.academy.techcenture.testCase1;
 import com.academy.techcenture.baseTest.BaseTest;
 import com.academy.techcenture.pages.*;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Map;
@@ -19,14 +17,6 @@ public class RegisterUserTest extends BaseTest {
 
     @Test(dataProvider = "CustomerAccountInformation")
     public void registerUser(Map<String, String> data) throws InterruptedException {
-<<<<<<< HEAD
-        extentTest = extentReports.startTest("registerUserTest");
-        homePage = new HomePage(driver);
-        loginPage = new LoginPage(driver);
-        enterAccountInformationPage = new EnterAccountInformationPage();
-        accountCreatedPage = new AccountCreatedPage();
-        accountDeletedPage = new AccountDeletedPage();
-=======
 
         extentTest = extentReports.startTest("registerUserTest");
 
@@ -35,8 +25,7 @@ public class RegisterUserTest extends BaseTest {
         enterAccountInformationPage = new EnterAccountInformationPage(driver);
         accountCreatedPage = new AccountCreatedPage(driver);
         accountDeletedPage = new AccountDeletedPage(driver);
-        
->>>>>>> 5cc922d (added some extentTest and log status for Test 9. It's done!)
+
         homePage.verifyHomePageTitle();
         extentTest.log(LogStatus.PASS, "Homepage verified");
         homePage.clickOnSignUpLoginButton();
@@ -48,15 +37,9 @@ public class RegisterUserTest extends BaseTest {
         extentTest.log(LogStatus.PASS, "Name and email entered");
         loginPage.clickOnSignUpButton();
         extentTest.log(LogStatus.PASS, "Clicked signup button");
-<<<<<<< HEAD
-//        enterAccountInformationPage.verifyEnterAccountInfoHeader();
-        extentTest.log(LogStatus.PASS, "Account information Header is displayed");
-        enterAccountInformationPage.radioButtonMR(data);
-=======
         enterAccountInformationPage.verifyEnterAccountInfoHeader();
         extentTest.log(LogStatus.PASS, "Account information Header is displayed");
         enterAccountInformationPage.mrOrMrsRadioButton(data);
->>>>>>> 5cc922d (added some extentTest and log status for Test 9. It's done!)
         enterAccountInformationPage.fillAccountDetails(data);
         extentTest.log(LogStatus.PASS, "Account details Successfully filled in ");
         enterAccountInformationPage.selectNewsletterOffers();
@@ -74,11 +57,6 @@ public class RegisterUserTest extends BaseTest {
         extentTest.log(LogStatus.PASS, "Delete account number clicked");
         accountDeletedPage.accountDeletedHeader();
         accountDeletedPage.clickContinueButton();
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 5cc922d (added some extentTest and log status for Test 9. It's done!)
     }
 
 }

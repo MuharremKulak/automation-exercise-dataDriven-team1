@@ -94,7 +94,7 @@ public class BaseTest {
 
     @DataProvider(name = "CustomerAccountInformation")
     public Object[][] getCreateCustomerData(){
-        return new ExcelReader("src/main/resources/automation-exercise-data.xlsx","CustomerAccountInformation").getData();
+        return new ExcelReader("src/main/resources/automation-exercise-data_old.xlsx","CustomerAccountInformation").getData();
     }
 
 
