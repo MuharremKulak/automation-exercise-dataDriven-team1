@@ -9,11 +9,14 @@ import org.testng.Assert;
 import java.util.Map;
 
 public class LoginWithIncorrectCredsPage {
+
     private WebDriver driver;
+
     public LoginWithIncorrectCredsPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(this.driver, this);
     }
+
     @FindBy(xpath = "//input[@data-qa='login-email']")
     protected WebElement emailInputForLogin;
     @FindBy(xpath = "//input[@data-qa='login-password']")

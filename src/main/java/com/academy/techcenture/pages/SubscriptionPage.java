@@ -7,13 +7,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class SubscriptionPage {
+    private WebDriver driver;
+
 
     public SubscriptionPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
     }
 
-    private WebDriver driver;
 
     @FindBy(xpath="//li/a/i[@class='fa fa-home']")
     public WebElement HomePageVisible;

@@ -1,4 +1,8 @@
 package com.academy.techcenture.TestCase3;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5cc922d (added some extentTest and log status for Test 9. It's done!)
 import com.academy.techcenture.baseTest.BaseTest;
 import com.academy.techcenture.pages.*;
 import com.relevantcodes.extentreports.LogStatus;
@@ -6,6 +10,7 @@ import org.testng.annotations.Test;
 import java.util.Map;
 
 public class LoginTestWithIncorrectCredentials extends BaseTest {
+<<<<<<< HEAD
         public static HomePage homePage;
         public static LoginPage loginPage;
         public  static LoginWithIncorrectCredsPage loginWithIncorrectCredsPage;
@@ -13,6 +18,14 @@ public class LoginTestWithIncorrectCredentials extends BaseTest {
 
     @Test(dataProvider = "CustomerAccountInformation")
 
+=======
+    private HomePage homePage;
+    private LoginPage loginPage;
+    private LoginWithIncorrectCredsPage loginWithIncorrectCredsPage;
+
+
+    @Test(dataProvider = "CustomerAccountInformation")
+>>>>>>> 5cc922d (added some extentTest and log status for Test 9. It's done!)
     public void loginWithIncorrectCreds(Map<String, String> data) throws InterruptedException {
         extentTest = extentReports.startTest("VerifyTestCasesPageTest");
 
@@ -37,5 +50,9 @@ public class LoginTestWithIncorrectCredentials extends BaseTest {
 
 
     }
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 5cc922d (added some extentTest and log status for Test 9. It's done!)

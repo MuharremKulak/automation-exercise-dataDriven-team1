@@ -55,6 +55,13 @@ public class HomePage {
         productsButton.click();
     }
 
+    public void loggedInAsUsername(){
+        Assert.assertTrue(loggedInAsUsername.isDisplayed());
+    }
+    public void deleteAccountButton(){
+        deleteAccountButton.click();
+    }
+
 
 
 
