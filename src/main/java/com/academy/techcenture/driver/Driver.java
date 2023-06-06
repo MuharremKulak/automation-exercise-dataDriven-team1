@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
 import java.io.File;
 import java.time.Duration;
 import java.util.Arrays;
@@ -57,7 +56,10 @@ public class Driver {
         return driver;
     }
 
-    public static void main(String[] args) {
-        System.out.println(new File("src/main/resources/5.28.0_0.crx").exists());
-    }
+   public static void quitDriver(){
+        if (driver != null){
+            driver.quit();
+            driver = null;
+        }
+   }
 }

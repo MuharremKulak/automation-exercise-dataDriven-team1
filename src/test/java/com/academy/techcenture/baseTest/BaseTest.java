@@ -21,14 +21,14 @@ import java.util.Date;
 
 public class BaseTest {
 
-    protected WebDriver driver;
-    protected ExtentReports extentReports;
-    protected ExtentTest extentTest;
+    protected static WebDriver driver;
+    protected static ExtentReports extentReports;
+    protected static ExtentTest extentTest;
     protected String browserName;
     protected String browserVersion;
 
 
-    @BeforeTest
+    @BeforeSuite
     public void beforeTest(){
         extentReports = new ExtentReports(  System.getProperty("user.dir") + "/test-output/ExtentReports.html", true);
         extentReports.addSystemInfo( "OS NAME" , System.getProperty("os.name"));
@@ -38,7 +38,7 @@ public class BaseTest {
     }
 
 
-    @AfterTest
+    @AfterSuite
     public void afterTest(){
         extentReports.flush();
         extentReports.close();
@@ -53,7 +53,7 @@ public class BaseTest {
         browserName = browserCap.getBrowserName();
         browserVersion = browserCap.getBrowserVersion();
         Thread.sleep(2000);
-        extentReports = new ExtentReports(  System.getProperty("user.dir") + "/test-output/ExtentReports.html", true);
+//        extentReports = new ExtentReports(  System.getProperty("user.dir") + "/test-output/ExtentReports.html", true);
         extentReports = getInstance();
         extentReports.addSystemInfo("BROWSER NAME", browserName);
         extentReports.addSystemInfo("BROWSER VERSION", browserVersion);
@@ -77,7 +77,8 @@ public class BaseTest {
         }
         extentReports.endTest(extentTest);
         if (driver != null){
-            driver.quit();
+            Driver.quitDriver();
+            driver = null;
         }
     }
 
@@ -94,7 +95,7 @@ public class BaseTest {
 
     @DataProvider(name = "CustomerAccountInformation")
     public Object[][] getCreateCustomerData(){
-        return new ExcelReader("src/main/resources/automation-exercise-data_old.xlsx","CustomerAccountInformation").getData();
+        return new ExcelReader("src/main/resources/automation-exercise-data.xlsx","CustomerAccountInformation").getData();
     }
 
 

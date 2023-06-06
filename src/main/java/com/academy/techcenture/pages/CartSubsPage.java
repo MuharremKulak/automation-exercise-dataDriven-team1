@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
 import java.util.Map;
 
 public class CartSubsPage {
@@ -17,7 +16,6 @@ public class CartSubsPage {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
     }
-
 
     @FindBy(xpath = "//li/a/i[@class='fa fa-home']")
     public WebElement HomePageVisible;

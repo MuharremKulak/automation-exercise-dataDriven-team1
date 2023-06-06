@@ -21,10 +21,6 @@ public class AccountDeletedPage {
     public WebElement continueButton;
 
 
-    public void accountDeletedHeader(){
-        Assert.assertTrue(accountDeletedHeader.isDisplayed());
-    }
-
     public void verifyAccountDeletedHeader(){
         Assert.assertTrue(accountDeletedHeader.isDisplayed());
     }

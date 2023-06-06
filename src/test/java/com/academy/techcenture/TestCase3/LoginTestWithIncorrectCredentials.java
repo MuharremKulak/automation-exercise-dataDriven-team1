@@ -42,16 +42,10 @@ public class LoginTestWithIncorrectCredentials extends BaseTest {
         loginWithIncorrectCredsPage.clickOnLoginButton();
         extentTest.log(LogStatus.PASS, "Clicked on login button");
         loginWithIncorrectCredsPage.verifyIncorrectEmailErrorMessage();
-<<<<<<< HEAD
 
-    }
-
-}
-
-=======
         extentTest.log(LogStatus.INFO, "Verified incorrect email error message");
 
     }
 
 }
->>>>>>> 353394f (final changes)
+

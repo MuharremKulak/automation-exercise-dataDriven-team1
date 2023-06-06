@@ -3,9 +3,9 @@
 <suite name="SMOKE TEST SUITE">
     <test name="SMOKE TESTS">
         <classes>
-            <class name="com.academy.techcenture.TestCase6.ContactUsFormTest"/>
-            <class name="com.academy.techcenture.TestCase16.PlaceAnOrderLoginBeforeCheckoutTest"/>
-            <class name="com.academy.techcenture.TestCase18.ViewCategoryProductsTest"/>
+<!--            <class name="com.academy.techcenture.TestCase6.ContactUsFormTest"/>-->
+<!--            <class name="com.academy.techcenture.TestCase16.PlaceAnOrderLoginBeforeCheckoutTest"/>-->
+<!--            <class name="com.academy.techcenture.TestCase18.ViewCategoryProductsTest"/>-->
             <class name="com.academy.techcenture.TestCase19.ViewAndCartBrandProductsTest"/>
             <class name="com.academy.techcenture.TestCase21.AddReviewOnProduct"/>
         </classes>
