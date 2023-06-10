@@ -41,6 +41,7 @@ public class Driver {
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
+                    //need to add ad-blocker plugin to firefox driver
                     driver = new FirefoxDriver();
                     break;
                 case "safari":
